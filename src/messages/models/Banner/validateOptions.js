@@ -13,6 +13,7 @@ const VALID_OPTIONS = {
     partnerAccount: [Types.STRING],
     _legacy: [Types.BOOLEAN],
     onRender: [Types.FUNCTION],
+    onClick: [Types.FUNCTION],
     currency: [Types.STRING, ['USD', 'EUR']],
     placement: [Types.STRING, ['', 'home', 'category', 'product', 'cart', 'payment']]
 };
