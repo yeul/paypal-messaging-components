@@ -170,6 +170,11 @@ export default curry(
                 link: 'Banner Wrapper'
             });
             track('MORS_CLICK');
+            /**
+             * If onClick exists as an option passed in by the merchant for analytics, run onClick.
+             * The function is defined by the merchant, but is optional.
+             * Clicking the banner will trigger this function.
+             */
             if (onClick) {
                 onClick();
             }

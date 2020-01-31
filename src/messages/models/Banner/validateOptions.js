@@ -14,6 +14,7 @@ const VALID_OPTIONS = {
     _legacy: [Types.BOOLEAN],
     onRender: [Types.FUNCTION],
     onClick: [Types.FUNCTION],
+    onApply: [Types.FUNCTION],
     currency: [Types.STRING, ['USD', 'EUR']],
     placement: [Types.STRING, ['', 'home', 'category', 'product', 'cart', 'payment']]
 };

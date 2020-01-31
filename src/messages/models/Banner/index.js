@@ -46,6 +46,12 @@ const assignFn = curry((fn, obj) => ({ ...obj, ...fn(obj) }));
 const asyncAssignFn = curry((fn, obj) => fn(obj).then(props => ({ ...obj, ...props })));
 
 const onRendered = ({ options: { onRender } }) => {
+    /**
+     * This function is also being used for merchant analytics purposes.
+     * A merchant can optionally pass in onRender as an option and define the function
+     * for use with their third-party analytics tools.
+     * Will run upon banner render.
+     */
     if (onRender) {
         onRender();
     }
