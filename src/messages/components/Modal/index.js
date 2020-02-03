@@ -24,7 +24,7 @@ export default {
             refId: meta.messageRequestId,
             onCalculate: amount => track({ et: 'CLICK', event_type: 'click', link: 'Calculator', amount }),
             onClick: linkName => {
-                if (linkName.includes('Apply Now')) {
+                if (linkName.includes('Apply Now') && options.onApply) {
                     options.onApply();
                 }
                 track({ et: 'CLICK', event_type: 'click', link: linkName });
