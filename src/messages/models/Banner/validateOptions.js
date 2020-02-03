@@ -8,6 +8,8 @@ import { Types, validateType } from './types';
 
 import { getValidOptions } from '../../../locale';
 
+/* TODO: For function types, create a default empty function so as to not need "if" statement blocks where function is called */
+
 const VALID_OPTIONS = {
     id: [Types.STRING],
     partnerAccount: [Types.STRING],

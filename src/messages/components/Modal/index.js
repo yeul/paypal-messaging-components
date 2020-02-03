@@ -23,10 +23,12 @@ export default {
             amount: options.amount,
             refId: meta.messageRequestId,
             onCalculate: amount => track({ et: 'CLICK', event_type: 'click', link: 'Calculator', amount }),
-            onClick: linkName => track({ et: 'CLICK', event_type: 'click', link: linkName }),
+            // eslint-disable-next-line no-constant-condition
+            onClick: 'Apply Now'
+                ? options.onApply
+                : linkName => track({ et: 'CLICK', event_type: 'click', link: linkName }),
             onClose: linkName =>
-                wrapper.firstChild.focus() || track({ et: 'CLICK', event_type: 'click', link: linkName }),
-            onApply: options.onApply
+                wrapper.firstChild.focus() || track({ et: 'CLICK', event_type: 'click', link: linkName })
         });
 
         hide();
