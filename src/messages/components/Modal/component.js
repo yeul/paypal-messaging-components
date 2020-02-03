@@ -64,11 +64,6 @@ export default create({
             queryParam: false,
             required: false
         },
-        onApply: {
-            type: 'function',
-            queryParam: false,
-            required: false
-        },
 
         // Computed Props
         payerId: {
