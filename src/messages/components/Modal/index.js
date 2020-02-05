@@ -23,7 +23,6 @@ export default {
             amount: options.amount,
             refId: meta.messageRequestId,
             onCalculate: amount => track({ et: 'CLICK', event_type: 'click', link: 'Calculator', amount }),
-merchant-analytics-hooks
             onClick: linkName => {
                 if (options.onApply && linkName.includes('Apply Now')) {
                     options.onApply();
@@ -32,7 +31,6 @@ merchant-analytics-hooks
             },
             onClose: linkName =>
                 wrapper.firstChild.focus() || track({ et: 'CLICK', event_type: 'click', link: linkName })
-modal-apply-now
         });
 
         hide();
