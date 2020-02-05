@@ -19,9 +19,7 @@ import {
 } from '../../../utils';
 import Modal from '../../components/Modal';
 
-// eslint-disable-next-line compat/compat
 const banners = new Map();
-// eslint-disable-next-line compat/compat
 const loggers = new Map();
 
 function setupTracker(obj) {
@@ -29,7 +27,7 @@ function setupTracker(obj) {
     const { clickUrl, impressionUrl, messageRequestId } = obj.meta;
     const track = obj.logger.track({
         uuid,
-        messageRequestId,
+        messageRequestId: `${messageRequestId}-${obj.options.id}`,
         urls: {
             DEFAULT: clickUrl,
             // Important: browser will only fire off one request if the same URL is requested
