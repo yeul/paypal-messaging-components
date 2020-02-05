@@ -29,8 +29,11 @@ export default {
                 }
                 track({ et: 'CLICK', event_type: 'click', link: linkName });
             },
-            onClose: linkName =>
-                wrapper.firstChild.focus() || track({ et: 'CLICK', event_type: 'click', link: linkName })
+            onClose: linkName => {
+                wrapper.firstChild.focus();
+
+                track({ et: 'CLICK', event_type: 'click', link: linkName });
+            }
         });
 
         hide();
