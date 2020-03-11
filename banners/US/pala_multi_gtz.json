@@ -25,8 +25,8 @@
     ],
 
     "disclaimer": [
-        ["Learn More", ["default", "xsmall"]],
-        [["Minimum purchase required. Subject to credit approval.", ["Learn More", "em"]], ["legacy-medium"]],
-        [["Min purch req'd. Subject to credit approval.", ["Learn More", "em"]], ["legacy-medium.2"]]
+        ["Learn more", ["default", "xsmall"]],
+        [["Minimum purchase required. Subject to credit approval.", ["Learn more", "em"]], ["legacy-medium"]],
+        [["Min purch req'd. Subject to credit approval.", ["Learn more", "em"]], ["legacy-medium.2"]]
     ]
 }
