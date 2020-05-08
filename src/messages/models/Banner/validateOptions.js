@@ -14,7 +14,8 @@ const VALID_OPTIONS = {
     _legacy: [Types.BOOLEAN],
     onRender: [Types.FUNCTION],
     currency: [Types.STRING, ['USD', 'EUR']],
-    placement: [Types.STRING, ['', 'home', 'category', 'product', 'cart', 'payment']]
+    placement: [Types.STRING, ['', 'home', 'category', 'product', 'cart', 'payment']],
+    countryCode: [Types.STRING, ['US', 'DE']]
 };
 
 // Formalized validation logger helper functions
@@ -145,7 +146,7 @@ export const validateStyleOptions = curry((logger, style) => {
  * @param {Object} options User options object
  * @returns {Object} Object containing only valid options
  */
-export default curry((logger, { account, amount, style, offer, ...otherOptions }) => {
+export default curry((logger, { account, amount, style, offer, countryCode, ...otherOptions }) => {
     const validOptions = populateDefaults(logger, VALID_OPTIONS, otherOptions, ''); // Combination of all valid style option combinations
 
     if (!validateType(Types.STRING, account)) {
@@ -190,6 +191,30 @@ export default curry((logger, { account, amount, style, offer, ...otherOptions }
         // Get the default settings for a text banner
         validOptions.style = { layout: 'text' };
     }
+
+    /**
+     * If a countryCode has been passed in, validate that the type is a string. If true, assign value to countryCode.
+     * Then, check to see if newly assigned countryCode is in the VALID_OPTIONS.countryCode array. If value is not in the array,
+     * return logger error.
+     *
+     * Else, if countryCode is not a string (i.e. number), set countryCode to undefined to prevent invalid country_code from being passed into query params.
+     * This will show default message based on the account/offer config. Console will also show logger error to ensure type validity.
+     *
+     * If countryCode has not been passed in, assign validOptions.countryCode to undefined and account/offer config will determine
+     * correct message to display/if a message shows at all. (i.e. by default, LATAM client IDs will show no message whereas a US account will show US-based messaging).
+     */
+    if (typeof countryCode !== 'undefined') {
+        if (validateType(Types.STRING, countryCode)) {
+            validOptions.countryCode = countryCode;
+
+            if (!(VALID_OPTIONS.countryCode[1].indexOf(countryCode) > -1)) {
+                logInvalid(logger, 'countryCode', 'Ensure countryCode is valid.');
+            }
+        } else {
+            validOptions.countryCode = undefined;
+            logInvalid(logger, 'countryCode', 'Ensure countryCode is a string.');
+        }
+    } else validOptions.countryCode = undefined;
 
     logger.info(EVENTS.VALIDATE_CONFIG, { options: objectClone(validOptions) });
 
