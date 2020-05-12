@@ -60,23 +60,10 @@ function mutateMarkup(markup) {
 function fetcherB({ account, merchantId, amount, offerType, currency, countryCode, style: { typeEZP } }) {
     const rootUrl = getGlobalUrl('MESSAGE_B');
 
-    // If countryCode config option is passed in, assign appropriate currency to match the country. Otherwise, use default.
-    let currencyCode = currency;
-    switch (countryCode) {
-        case 'US':
-            currencyCode = 'USD';
-            break;
-        case 'DE':
-            currencyCode = 'EUR';
-            break;
-        default:
-            break;
-    }
-
     const queryParams = {
         merchant_id: merchantId, // Partner integrations
         amount,
-        currency: currencyCode,
+        currency,
         country_code: countryCode,
         variant: PLACEMENT_VARIANT,
         credit_type: typeEZP === '' || offerType === 'NI' ? 'NI' : undefined
