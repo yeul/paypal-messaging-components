@@ -48,7 +48,7 @@ function getValidVal(logger, typeArr, val, location) {
 
             if (validVal === undefined) {
                 logInvalidOption(logger, location, validVals, val);
-                if (validVals[0] === undefined) {
+                if (typeof validVals[0] === 'undefined') {
                     return validVals[0];
                 }
                 return validVals[0].split('|')[0];
