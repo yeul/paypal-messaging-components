@@ -18,3 +18,10 @@ export const textLogoMutations = [
     ['text.color:grayscale && logo.type:inline', { logo: Logo.ALT_NO_PP.GRAYSCALE }],
     ['text.color:monochrome && logo.type:inline', { logo: Logo.ALT_NO_PP.MONOCHROME }]
 ];
+
+export const flexLogoMutations = [
+    ['color:gray', { logo: Logo.PRIMARY.COLOR }],
+    ['color:white', { logo: Logo.PRIMARY.COLOR }],
+    ['color:monochrome', { logo: Logo.PRIMARY.MONOCHROME }],
+    ['color:grayscale', { logo: Logo.PRIMARY.GRAYSCALE }]
+];

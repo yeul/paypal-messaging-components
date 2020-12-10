@@ -1,6 +1,6 @@
 import Logo from '../logos';
-import { textWrap, messageLogoWidth, altNoWrap, setLogoTop } from '../../../message/mediaQueries';
-import { textLogoMutations } from './common';
+import { textWrap, messageLogoWidth, altNoWrap, setLogoTop, logo20x1 } from '../../../message/mediaQueries';
+import { textLogoMutations, flexLogoMutations } from './common';
 
 export default {
     'layout:text': [
@@ -81,5 +81,29 @@ export default {
             })
         ],
         ...textLogoMutations
+    ],
+    'layout:flex': [
+        [
+            'default',
+            {
+                logo: Logo.PRIMARY.WHITE,
+                headline: [
+                    {
+                        tag: 'xsmall'
+                    },
+                    {
+                        tag: 'medium'
+                    }
+                ],
+                disclaimer: ['default']
+            }
+        ],
+        [
+            'ratio:20x1',
+            {
+                styles: [logo20x1()]
+            }
+        ],
+        ...flexLogoMutations
     ]
 };
