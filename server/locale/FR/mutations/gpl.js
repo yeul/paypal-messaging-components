@@ -104,9 +104,21 @@ export default {
             }
         ],
         [
+            'ratio:6x1',
+            {
+                subHeadline: [{ tag: 'small', br: ['achats'] }]
+            }
+        ],
+        [
             'ratio:20x1',
             {
                 styles: [logo20x1()]
+            }
+        ],
+        [
+            'ratio:1x4',
+            {
+                subHeadline: [{ tag: 'default' }]
             }
         ],
         ...flexLogoMutations

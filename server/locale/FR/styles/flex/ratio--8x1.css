@@ -13,7 +13,6 @@
     .message__logo-container {
         flex-basis: 12%;
         margin-bottom: -6px;
-        justify-content: flex-start;
         margin-left: 5px;
     }
 
@@ -25,6 +24,7 @@
 
     .message__disclaimer {
         margin-left: 1%;
+        vertical-align: super;
     }
 }
 
@@ -44,7 +44,7 @@
     }
 
     .message__disclaimer {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -56,7 +56,7 @@
 
 @media (min-aspect-ratio: 80/11) and (min-width: 351px) {
     .message__headline {
-        font-size: 3.5vw;
+        font-size: 3vw;
     }
 }
 

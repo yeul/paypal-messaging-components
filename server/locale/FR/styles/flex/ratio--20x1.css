@@ -2,7 +2,7 @@
     .message__logo-container {
         margin-bottom: -3px;
         max-width: 12%;
-        margin-right: 1.5vw;
+        margin-right: 0.5vw;
     }
 
     .message__logo:nth-of-type(1) {
@@ -33,6 +33,7 @@
 
     .message__disclaimer {
         margin-left: 4px;
+        vertical-align: super;
     }
 }
 

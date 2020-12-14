@@ -90,21 +90,14 @@ export default {
                         tag: 'medium'
                     }
                 ],
-                disclaimer: ['default'],
-                styles: [
-                    '.message__headline .tag--medium > span:first-child:after { content: "."; }',
-                    '.message__headline .tag--medium .weak { display: none; }'
-                ]
+                subHeadline: [{ tag: 'default', br: ['paiement en 4X.'] }],
+                disclaimer: ['default']
             }
         ],
         [
             'ratio:20x1',
             {
-                styles: [
-                    logo20x1(),
-                    '.message__headline .tag--medium .weak { display: none; }',
-                    '.message__headline .tag--medium > span:first-child:after { content: "."; }'
-                ]
+                styles: [logo20x1()]
             }
         ],
         [
@@ -113,16 +106,7 @@ export default {
                 headline: [
                     {
                         tag: 'xsmall'
-                    },
-                    {
-                        tag: 'medium',
-                        br: ['payments']
                     }
-                ],
-                styles: [
-                    '.message__headline .tag--medium > span:first-child > span:last-child:after { content: "."; }',
-                    '.message__headline .tag--medium .weak { display: none; }',
-                    '@media (min-aspect-ratio: 80/11) { .message__disclaimer { margin-left: 0;} }'
                 ]
             }
         ],
