@@ -1,6 +1,6 @@
 import Logo from '../../../message/logos';
 import { textWrap, messageLogoWidth, altNoWrap, setLogoTop, logo20x1 } from '../../../message/mediaQueries';
-import { textLogoMutations, flexLogoMutations } from './common';
+import { textLogoMutations, flexLogoMutations } from '../../../message/logoMutations';
 
 export default {
     'layout:text': [
