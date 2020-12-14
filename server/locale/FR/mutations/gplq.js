@@ -90,7 +90,7 @@ export default {
                         tag: 'medium'
                     }
                 ],
-                subHeadline: [{ tag: 'default', br: ['paiement en 4X.'] }],
+                subHeadline: [{ tag: 'small', br: ['paiement en 4X.'] }],
                 disclaimer: ['default']
             }
         ],

@@ -107,7 +107,13 @@ export default {
             'ratio:1x1',
             {
                 subHeadline: [{ tag: 'small', br: ['achats'] }],
-                styles: [`.message__sub-headline { font-size: 1.3rem }`, `.message__disclaimer { line-height: 7em; }`]
+                styles: [`.message__sub-headline { font-size: 1.3rem; }`]
+            }
+        ],
+        [
+            'ratio:1x4',
+            {
+                subHeadline: [{ tag: 'small', br: ['paiement en'] }]
             }
         ],
         [
@@ -120,12 +126,6 @@ export default {
             'ratio:20x1',
             {
                 styles: [logo20x1()]
-            }
-        ],
-        [
-            'ratio:1x4',
-            {
-                subHeadline: [{ tag: 'default' }]
             }
         ],
         ...flexLogoMutations
