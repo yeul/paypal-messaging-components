@@ -104,6 +104,13 @@ export default {
             }
         ],
         [
+            'ratio:1x1',
+            {
+                subHeadline: [{ tag: 'small', br: ['achats'] }],
+                styles: [`.message__sub-headline { font-size: 1.3rem }`, `.message__disclaimer { line-height: 7em; }`]
+            }
+        ],
+        [
             'ratio:6x1',
             {
                 subHeadline: [{ tag: 'small', br: ['achats'] }]
