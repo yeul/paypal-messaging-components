@@ -105,19 +105,16 @@ export default {
             }
         ],
         [
-            'ratio:20x1',
+            'ratio:1x4',
             {
-                styles: [logo20x1()]
+                subHeadline: [{ tag: 'small', br: ['avec', 'et', 'paiement en'] }],
+                styles: [`.message__sub-headline { font-size: 1.2rem; }`]
             }
         ],
         [
-            'ratio:8x1',
+            'ratio:20x1',
             {
-                headline: [
-                    {
-                        tag: 'xsmall'
-                    }
-                ]
+                styles: [logo20x1()]
             }
         ],
         ...flexLogoMutations
