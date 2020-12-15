@@ -154,7 +154,7 @@ export default {
     },
     buyerCountry: ({ props: { buyerCountry } }) => {
         if (typeof buyerCountry !== 'undefined') {
-            const options = ['US', 'DE', 'GB'];
+            const options = ['US', 'DE', 'GB', 'FR'];
 
             if (!validateType(Types.STRING, buyerCountry)) {
                 logInvalidType('buyerCountry', Types.STRING, buyerCountry);

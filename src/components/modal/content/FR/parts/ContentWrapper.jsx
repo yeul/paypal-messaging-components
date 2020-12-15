@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
 import { useRef, useEffect, useState } from 'preact/hooks';
-import PL from './PL';
+import GPL from './GPL';
 import { useScroll, useTransitionState } from '../../../lib';
 import Header from '../../../parts/Header';
 import Container from '../../../parts/Container';
@@ -10,7 +10,7 @@ import Icon from '../../../parts/Icon';
 const ContentWrapper = () => {
     const headerRef = useRef();
     const contentWrapper = useRef();
-
+    // const { scrollTo } = useScroll();
     const cornerRef = useRef();
     const [sticky, setSticky] = useState(false);
     const [, handleClose, transitionState] = useTransitionState();
@@ -19,6 +19,8 @@ const ContentWrapper = () => {
         ({ target: { scrollTop } }) => {
             const { clientHeight: headerHeight } = headerRef.current;
             const { clientHeight: cornerHeight } = cornerRef.current;
+
+            console.log(scrollTop);
 
             // event.target.scrollTop resets itself to 0 under certain circumstances as the user scrolls on mobile
             // Checking the value here prevents erratic behavior wrt
@@ -47,10 +49,21 @@ const ContentWrapper = () => {
         <Container contentWrapper={contentWrapper} contentMaxWidth={640}>
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div className="top-overlay" onClick={() => handleClose('Modal Overlay')} />
-            <div className="content-wrapper" ref={contentWrapper}>
+            <div
+                className="content-wrapper"
+                ref={contentWrapper}
+                onScroll={() => {
+                    const { clientHeight: headerHeight } = headerRef.current;
+                    const { clientHeight: cornerHeight } = cornerRef.current;
+                    console.log(headerHeight, cornerHeight, cornerRef.scrollTop);
+                }}
+            >
                 <div className="content-background">
                     <Header wrapperRef={headerRef}>
-                        <h1>Buy now, pay later</h1>
+                        <h1>
+                            Achetez maintenant, <br />
+                            payez plus tard
+                        </h1>
                     </Header>
                     <div className="hero-image">
                         <Icon name="phone-arm" />
@@ -58,7 +71,7 @@ const ContentWrapper = () => {
                     <div className={classNames.join(' ')}>
                         <span className="corner" ref={cornerRef} />
                         <main className="main">
-                            <PL />
+                            <GPL />
                         </main>
                     </div>
                 </div>
