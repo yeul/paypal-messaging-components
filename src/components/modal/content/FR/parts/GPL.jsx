@@ -4,6 +4,8 @@ import { h, Fragment } from 'preact';
 import Icon from '../../../parts/Icon';
 import { useContent, useProductMeta } from '../../../lib';
 
+const replaceZeros = string => string.replace(/,00/g, '');
+
 export default () => {
     const { headline, subHeadline, instructions, terms } = useContent('GPL');
     const { qualifying } = useProductMeta('GPL');
@@ -16,7 +18,7 @@ export default () => {
                 <h3>
                     {qualifying.toLowerCase() === 'true'
                         ? subHeadline.qualified
-                        : subHeadline.unqualified.replace(/\.00/g, '')}
+                        : replaceZeros(subHeadline.unqualified)}
                 </h3>
 
                 <div className="call-to-action">
@@ -39,11 +41,8 @@ export default () => {
             <div className="terms">
                 <h3>À propos du Paiement en 4X</h3>
                 <ul>
-                    {qualifying.toLowerCase() === 'true' ? (
-                        <li>{instructions.purchaseAmount.replace(/\.00/g, '')}</li>
-                    ) : null}
                     {instructions.items.map(inst => (
-                        <li>{inst}</li>
+                        <li>{replaceZeros(inst)}</li>
                     ))}
                 </ul>
                 <div className="terms">
