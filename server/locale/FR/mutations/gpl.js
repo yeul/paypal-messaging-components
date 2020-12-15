@@ -107,13 +107,17 @@ export default {
             'ratio:1x1',
             {
                 subHeadline: [{ tag: 'small', br: ['achats'] }],
-                styles: [`.message__sub-headline { font-size: 1.3rem; }`]
+                styles: [
+                    `.message__sub-headline { font-size: 1.2rem; } .message__disclaimer { bottom: 12%; }`,
+                    `@media screen and (max-width: 240px) { .message__sub-headline { font-size: 0.9rem; } }`
+                ]
             }
         ],
         [
             'ratio:1x4',
             {
-                subHeadline: [{ tag: 'small', br: ['paiement en'] }]
+                subHeadline: [{ tag: 'small', br: ['avec', 'et', 'paiement en'] }],
+                styles: [`.message__sub-headline { font-size: 1.2rem; }`]
             }
         ],
         [
@@ -125,6 +129,7 @@ export default {
         [
             'ratio:20x1',
             {
+                headline: [{ tag: 'xsmall', br: ['achats'] }],
                 styles: [logo20x1()]
             }
         ],

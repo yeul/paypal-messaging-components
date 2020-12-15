@@ -9,10 +9,6 @@
     line-height: 1.6em;
 }
 
-.message__disclaimer {
-    position: static;
-}
-
 .message__disclaimer > span {
     font-weight: 400;
     text-decoration: none;

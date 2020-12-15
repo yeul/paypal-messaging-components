@@ -17,12 +17,12 @@
     margin-bottom: 10%;
 }
 
-.message__sub-headline {
-    display: none;
-}
+/* .message__sub-headline { */
+/*     display: none; */
+/* } */
 
 .message__disclaimer {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .message__disclaimer span.multi:nth-of-type(1) {

@@ -95,6 +95,16 @@ export default {
             }
         ],
         [
+            'ratio:1x1',
+            {
+                subHeadline: [{ tag: 'small', br: ['achats'] }],
+                styles: [
+                    `.message__sub-headline { font-size: 1.2rem; } .message__disclaimer { bottom: 12%; }`,
+                    `@media screen and (max-width: 240px) { .message__sub-headline { font-size: 0.9rem; } }`
+                ]
+            }
+        ],
+        [
             'ratio:20x1',
             {
                 styles: [logo20x1()]
