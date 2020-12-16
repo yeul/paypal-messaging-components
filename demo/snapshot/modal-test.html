@@ -53,31 +53,21 @@
              */
 
             paypal.Message.render(config, '.banner-1');
-            if (config.account === 'DEV00000000NI') {
-                setTimeout(() => {
+            setTimeout(() => {
+                if (config.account === 'DEV00000000NI') {
                     paypal.Message.render(config, '.banner-3');
-                }, 1000);
-            } else if (config.account === 'DEV000000GBPL') {
-                setTimeout(() => {
+                } else if (config.account === 'DEV000000GBPL') {
                     paypal.Message.render(config, '.banner-5');
-                }, 1000);
-            } else if (config.account === 'DEV00000GBPLQ') {
-                setTimeout(() => {
+                } else if (config.account === 'DEV00000GBPLQ') {
                     paypal.Message.render(config, '.banner-4');
-                }, 1000);
-            } else if (config.account === 'DEV000000FRPL') {
-                setTimeout(() => {
+                } else if (config.account === 'DEV000000FRPL') {
                     paypal.Message.render(config, '.banner-7');
-                }, 1000);
-            } else if (config.account === 'DEV00000FRPLQ') {
-                setTimeout(() => {
+                } else if (config.account === 'DEV00000FRPLQ') {
                     paypal.Message.render(config, '.banner-6');
-                }, 1000);
-            } else {
-                setTimeout(() => {
+                } else {
                     paypal.Message.render(config, '.banner-2');
-                }, 1000);
-            }
+                }
+            }, 1000);
         </script>
     </body>
 </html>
