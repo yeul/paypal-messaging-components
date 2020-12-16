@@ -62,7 +62,7 @@
 
 @media (max-width: 374px) {
     .message__headline {
-        font-size: 4vw;
+        font-size: 3.5vw;
     }
 
     .message__disclaimer {
