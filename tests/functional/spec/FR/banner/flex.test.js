@@ -20,7 +20,7 @@ const tests = [].concat(
 );
 
 describe(`FR > flex (Test Count: ${tests.length * accounts.length})`, () => {
-    const runBannerTest = createBannerTest('GB');
+    const runBannerTest = createBannerTest('FR');
 
     describe.each(accounts)(`> %s (Test Count: ${tests.length})`, account => {
         const getConfig = style => ({
