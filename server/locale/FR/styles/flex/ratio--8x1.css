@@ -66,6 +66,7 @@
 @media (min-aspect-ratio: 80/11) and (max-width: 350px) {
     .message__headline {
         font-size: 10px;
+        line-height: 1.1rem;
     }
 }
 
