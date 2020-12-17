@@ -18,10 +18,6 @@
     padding-top: 10%;
 }
 
-/* .message__sub-headline { */
-/*     display: none; */
-/* } */
-
 .message__disclaimer {
     font-size: 1rem;
 }
@@ -32,6 +28,10 @@
 
 .message__headline .tag--xsmall {
     display: none;
+}
+
+.message__sub-headline {
+    font-size: 1.2rem;
 }
 
 @media (min-height: 500px) {

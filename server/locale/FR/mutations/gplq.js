@@ -99,16 +99,14 @@ export default {
             {
                 subHeadline: [{ tag: 'small', br: ['achats'] }],
                 styles: [
-                    `.message__sub-headline { font-size: 1.2rem; } .message__disclaimer { bottom: 12%; }`,
-                    `@media screen and (max-width: 240px) { .message__sub-headline { font-size: 0.9rem; } }`
+                    `@media (min-width: 140px) {.message__headline {font-size: 9.5vw;} .message__sub-headline {font-size: 6vw;}`
                 ]
             }
         ],
         [
             'ratio:1x4',
             {
-                subHeadline: [{ tag: 'small', br: ['avec', 'et', 'paiement en'] }],
-                styles: [`.message__sub-headline { font-size: 1.2rem; }`]
+                subHeadline: [{ tag: 'small', br: ['avec', 'et', 'paiement en'] }]
             }
         ],
         [
