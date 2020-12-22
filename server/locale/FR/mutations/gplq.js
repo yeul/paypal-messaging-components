@@ -106,7 +106,8 @@ export default {
         [
             'ratio:1x4',
             {
-                subHeadline: [{ tag: 'small', br: ['avec', 'et', 'paiement en'] }]
+                subHeadline: [{ tag: 'small', br: ['avec', 'et', 'paiement en'] }],
+                style: [`@media (aspect-ratio: 1/2) {.message__sub-headline { display: inline;}}`]
             }
         ],
         [
